@@ -25,7 +25,6 @@ var heightCheck = function(ride, height) {
 };
 
 $(document).ready(function() {
-  $('.ride').hide();
   $('form').submit(function(e) {
     e.preventDefault();
     var height = $('form input').val();
@@ -36,10 +35,9 @@ $(document).ready(function() {
         allowedRides.push(ride);
       }
     });
-    //show those rides
-    $('.ride').hide();
+    //highlight the rides
     $.each(allowedRides, function(index, value){
-      $('.ride#' + value).show();
+      $('.ride#' + value).addClass('rideable');
     });
   });
 });
