@@ -1,0 +1,22 @@
+.ride {
+  display: none;
+}
+
+img {
+  height: 300px;
+  width: 300px;
+}
+
+.jumbotron{
+  text-align: center;
+  background-image: url('../img/banner.jpg');
+  background-repeat:no-repeat;
+  background-position: center;
+  background-color:inherit;
+  color: white;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000; 
+}
