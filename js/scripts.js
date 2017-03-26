@@ -97,15 +97,17 @@ $(document).ready(function() {
   });
 
   /*
-  Copying and pasting all of the above functions into one gives us this function
+  Copying and pasting all of the above functions into one gives us this monster
   I'm not sure whether this is a terrible way to write javascript, a typical way to write javascript, or both
   */
   var allInOneGo = function(height, rides) {
     $.each(
+      //$.each() gets passed two arguments, this function is the first. It returns an array
       $.map(rides, function(requirements, ridename) {
         if ((height > requirements.minheight && (height < requirements.maxheight || requirements.maxheight === 0))) {
           return ridename;
         }
+        //this is the second argument, which $.each() uses on each item of the set
       }), function(index, value){
         $('.ride#' + value).show();
     });
@@ -123,4 +125,9 @@ $(document).ready(function() {
   var oneParameter = function(rides) {
     $.each($.map(rides, function(requirements, ridename) { if ((parseInt($('form input').val() > requirements.minheight && (parseInt($('form input').val() < requirements.maxheight || requirements.maxheight === 0))) { return ridename; }}), function(index, value){ $('.ride#' + value).show(); }); 
   };
+
+  /*
+  Thanks for reading!
+  
+  */
 });
